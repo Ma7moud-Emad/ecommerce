@@ -15,7 +15,7 @@ import Cart from "./component/Cart/Cart";
 import { Toaster } from "react-hot-toast";
 import CachOrder from "./component/CachOrder/CachOrder";
 import Home from "./component/Home/Home";
-import AllOrder from "./component/allorders/AllOrder.jsx";
+import AllOrder from "./component/allorders/AllOrder";
 
 const router = createBrowserRouter([
   {
