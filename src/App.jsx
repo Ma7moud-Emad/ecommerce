@@ -3,7 +3,7 @@ import Layout from "./component/Layout/Layout";
 import Notfound from "./component/Notfound/Notfound";
 import Register from "./component/Register/Register";
 import Login from "./component/Login/Login";
-import AuthUser from "./context/AuthUser/AuthUser";
+import AuthUser from "./context/AuthUser";
 import ProtectedRouter from "./component/ProdectedRouter/ProtectedRouter";
 import Products from "./component/Products/Products";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -16,7 +16,6 @@ import { Toaster } from "react-hot-toast";
 import CachOrder from "./component/CachOrder/CachOrder";
 import Home from "./component/Home/Home";
 import AllOrder from "./component/allorders/AllOrder.jsx";
-import "./App.css";
 
 const router = createBrowserRouter([
   {

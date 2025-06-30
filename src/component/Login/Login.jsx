@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthUser/AuthUser";
+import { AuthContext } from "../../context/AuthUser";
 import { cartcontext } from "../../context/CartContext";
 import signin from "../../assets/images/signin.png";
 import "./Login.css";

@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-function ProtectedRouter(props) {
+// eslint-disable-next-line react/prop-types
+function ProtectedRouter({ children }) {
   const navigate = useNavigate();
 
   if (localStorage.getItem("tkn") === null) {
@@ -25,7 +26,7 @@ function ProtectedRouter(props) {
     });
     return <></>;
   } else {
-    return <>{props.children}</>;
+    return <>{children}</>;
   }
 }
 

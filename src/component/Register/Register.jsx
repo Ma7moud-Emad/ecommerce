@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import { AuthContext } from "../../context/AuthUser/AuthUser";
+import { AuthContext } from "../../context/AuthUser";
 import Swal from "sweetalert2";
 import signup from "../../assets/images/signup.svg";
 import "./Register.css";
@@ -125,7 +125,7 @@ function Register() {
                   </label>
                   <input
                     type="text"
-                    className="form-control "
+                    className="form-control"
                     id="name"
                     name="name"
                     autoComplete="newname"

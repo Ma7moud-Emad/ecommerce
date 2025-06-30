@@ -1,14 +1,14 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { cartcontext } from "../../context/CartContext";
 import imageOne from "../../assets/images/iconApp.svg";
 import "./Navbar.css";
-import { AuthContext } from "../../context/AuthUser/AuthUser";
+// import { AuthContext } from "../../context/AuthUser";
 
 function Navbar() {
   //
-  const { setToken } = useContext(AuthContext);
-  const navigate = useNavigate();
+  // const { setToken } = useContext(AuthContext);
+  // const navigate = useNavigate();
   // decode
   let payload = null;
   if (localStorage.tkn) {
@@ -118,11 +118,11 @@ function Navbar() {
                   style={{
                     cursor: "pointer",
                   }}
-                  onClick={() => {
-                    setToken(null);
-                    localStorage.removeItem("tkn");
-                    navigate("/");
-                  }}
+                  // onClick={() => {
+                  //   setToken(null);
+                  //   localStorage.clear();
+                  //   navigate("/");
+                  // }}
                 >
                   Sign Out
                 </li>

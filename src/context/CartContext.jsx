@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const cartcontext = createContext();
 
-function CartContext(props) {
+function CartContext({ children }) {
   const [allProducts, setAllProducts] = useState(null);
   const [countProducts, setCountProducts] = useState(0);
   const [priceProducts, setPriceProducts] = useState(0);
-
   const [cartId, setCartId] = useState(null);
 
   // fun >> add product to cart
@@ -34,7 +35,7 @@ function CartContext(props) {
       });
   }
 
-  // fun >> show cart data
+  // fun >> show cart data items
   async function getCart() {
     await axios
       .get("https://ecommerce.routemisr.com/api/v1/cart", {
@@ -63,7 +64,9 @@ function CartContext(props) {
 
   // when refresh re-render cart
   useEffect(() => {
-    getCart();
+    if (Object.keys(localStorage).includes("token")) {
+      getCart();
+    }
   }, []);
 
   return (
@@ -81,7 +84,7 @@ function CartContext(props) {
         setCartId,
       }}
     >
-      {props.children}
+      {children}
     </cartcontext.Provider>
   );
 }
